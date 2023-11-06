@@ -19,6 +19,7 @@
 		1F7AC4502AF921A3008C905A /* MainResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7AC44F2AF921A3008C905A /* MainResponse.swift */; };
 		1F7AC4522AF92271008C905A /* WindResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7AC4512AF92271008C905A /* WindResponse.swift */; };
 		1F7AC4542AF9229F008C905A /* SysResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7AC4532AF9229F008C905A /* SysResponse.swift */; };
+		1F7AC4562AF924EF008C905A /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7AC4552AF924EF008C905A /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		1F7AC44F2AF921A3008C905A /* MainResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainResponse.swift; sourceTree = "<group>"; };
 		1F7AC4512AF92271008C905A /* WindResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindResponse.swift; sourceTree = "<group>"; };
 		1F7AC4532AF9229F008C905A /* SysResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SysResponse.swift; sourceTree = "<group>"; };
+		1F7AC4552AF924EF008C905A /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				1F7AC4402AF91F08008C905A /* WeatherManager.swift */,
+				1F7AC4552AF924EF008C905A /* LocationManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 				1F7AC44E2AF92161008C905A /* WeatherDetails.swift in Sources */,
 				1F7AC4522AF92271008C905A /* WindResponse.swift in Sources */,
 				1F7AC4502AF921A3008C905A /* MainResponse.swift in Sources */,
+				1F7AC4562AF924EF008C905A /* LocationManager.swift in Sources */,
 				1F7AC43F2AF91EED008C905A /* HomeView.swift in Sources */,
 				1F7AC4542AF9229F008C905A /* SysResponse.swift in Sources */,
 				1F7AC44C2AF92129008C905A /* WeatherResponse.swift in Sources */,
