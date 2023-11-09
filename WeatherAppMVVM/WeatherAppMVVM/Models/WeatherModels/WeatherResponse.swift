@@ -8,14 +8,15 @@
 import Foundation
 
 struct WeatherResponse: Decodable {
-    var name: String
-    var weatherDetails: [WeatherDetails]
+    
+    var weather: [WeatherDetails]
     var main: MainResponse
+    var name: String
     var wind: WindResponse
     var sys: SysResponse
     
     var weatherCondition: String {
-        guard let firstWeather = weatherDetails.first else { return "cloud" }
+        guard let firstWeather = weather.first else { return "cloud" }
         
         switch firstWeather.id {
         case 200...232:

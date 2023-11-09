@@ -21,17 +21,18 @@ class WeatherManager {
         
         URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data, error == nil else {
-                print("\(url) + 1")
+                
                 completion(.failure(.dataError))
                 return
             }
             
             do {
+                
                 let weatherResponse = try JSONDecoder().decode(WeatherResponse.self, from: data)
+                
                 completion(.success(weatherResponse))
             } catch {
-                print("\(url) + 2")
-
+                
                 completion(.failure(.dataError))
             }
         }.resume()
@@ -47,8 +48,6 @@ class WeatherManager {
         
         URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data, error == nil else {
-                print("\(url) + 3")
-
                 completion(.failure(.dataError))
                 return
             }
@@ -57,8 +56,6 @@ class WeatherManager {
                 let weatherResponse = try JSONDecoder().decode(WeatherResponse.self, from: data)
                 completion(.success(weatherResponse))
             } catch {
-                print("\(url) + 4")
-
                 completion(.failure(.dataError))
             }
         }.resume()

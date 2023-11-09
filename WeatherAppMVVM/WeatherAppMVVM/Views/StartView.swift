@@ -12,6 +12,7 @@ struct StartView: View {
     
     @State private var isAnimating: Bool = false
     @ObservedObject var locationManager = LocationManager()
+    @Binding var skipFetchingLocation: Bool
     
     var body: some View {
         ZStack {
@@ -56,7 +57,7 @@ struct StartView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
-                        
+                        skipFetchingLocation = true
                     } label: {
                         Text("Skip")
                         Image(systemName: "arrow.forward")
@@ -68,8 +69,3 @@ struct StartView: View {
     }
 }
 
-struct StartView_Previews: PreviewProvider {
-    static var previews: some View {
-        StartView()
-    }
-}

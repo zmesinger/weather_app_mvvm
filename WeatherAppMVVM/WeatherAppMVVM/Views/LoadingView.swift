@@ -16,6 +16,7 @@ struct LoadingView: View {
             
             
             LoadingComponent()
+                
 
             
             VStack {
@@ -27,6 +28,7 @@ struct LoadingView: View {
             }
             .multilineTextAlignment(.center)
         }
+        
         
     }
 }
