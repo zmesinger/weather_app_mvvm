@@ -80,7 +80,7 @@ struct WeatherView: View {
                     .cornerRadius(10)
                 
                 
-                    Grid(alignment: .center, horizontalSpacing: 48, verticalSpacing: 24) {
+                    Grid(alignment: .leading, horizontalSpacing: 48, verticalSpacing: 24) {
                         
                         GridRow {
                             WeatherDetailsItem(symbolName: "wind", value: "\(weather!.wind.speed.roundDouble())m/s", itemName: "Wind")
