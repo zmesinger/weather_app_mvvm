@@ -32,9 +32,11 @@ struct StartView: View {
                     VStack {
                         Text("No location")
                             .bold()
+                            .foregroundColor(.white)
                             .font(.title)
                 
                         Text("Share your location to find weather for your current locaion ")
+                            .foregroundColor(.white)
                             .padding()
                             
                     }
@@ -59,13 +61,23 @@ struct StartView: View {
                     Button {
                         skipFetchingLocation = true
                     } label: {
-                        Text("Skip")
-                        Image(systemName: "arrow.forward")
+                        HStack {
+                            Text("Skip")
+                            Image(systemName: "arrow.forward")
+                        }
+                        .padding(.all, 8)
+                        .background(darkBlue)
+                        .cornerRadius(16)
+                        
                     }
+                    
+                    
 
 
                 }
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(.linearGradient(colors: [diamondBlue, .blue, darkBlue ], startPoint: .topLeading, endPoint: .bottomTrailing))
     }
 }
 

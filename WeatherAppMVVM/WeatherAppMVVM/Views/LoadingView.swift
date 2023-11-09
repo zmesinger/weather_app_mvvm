@@ -9,25 +9,33 @@ import SwiftUI
 
 struct LoadingView: View {
     
-    
+    @State var isAnimating: Bool = false
     
     var body: some View {
-        ZStack {
-            
-            
-            LoadingComponent()
+        VStack {
+            ZStack {
+                LoadingComponent()
+                VStack {
+                    
+                    Text("Fetching location...")
+                        .foregroundColor(.white)
+                        .font(.title2)
                 
-
-            
-            VStack {
-                
-                Text("Fetching location...")
-                    .font(.title2)
-            
-                
+                    
+                }
+                .multilineTextAlignment(.center)
             }
-            .multilineTextAlignment(.center)
+            .opacity(isAnimating ? 1 : 0)
+            .offset(y: isAnimating ? 0 : -40)
+            .animation(.easeOut, value: isAnimating)
+            .onAppear {
+                isAnimating = true
+            }
+            
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(.linearGradient(colors: [diamondBlue, .blue, darkBlue ], startPoint: .topLeading, endPoint: .bottomTrailing))
+        
         
         
     }

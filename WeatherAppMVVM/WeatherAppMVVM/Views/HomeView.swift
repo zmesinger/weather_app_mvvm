@@ -8,15 +8,19 @@
 import SwiftUI
 
 struct HomeView: View {
+    @State var weather: WeatherResponse?
+    @State var weatherManager: WeatherManager
     var body: some View {
         TabView {
-            
+            WeatherView(weatherManager: weatherManager, weather: weather)
+                .tabItem {
+                    Label("Weather", systemImage: "smoke")
+                        .foregroundColor(.white)
+                }
+                
         }
+        .toolbarColorScheme(.light, for: .tabBar)
     }
 }
 
-struct HomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeView()
-    }
-}
+

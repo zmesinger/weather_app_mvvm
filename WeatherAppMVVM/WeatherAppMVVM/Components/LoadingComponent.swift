@@ -22,7 +22,7 @@ struct LoadingComponent: View {
              
                         Circle()
                             .trim(from: 0, to: 0.2)
-                            .stroke(Color.orange, lineWidth: 7)
+                            .stroke(Color.accentColor, lineWidth: 7)
                             .rotationEffect(Angle(degrees: isRotating ? 360 : 0))
                             .onAppear() {
                                 withAnimation(.linear(duration: 1).speed(0.7).repeatForever(autoreverses: false)) {
