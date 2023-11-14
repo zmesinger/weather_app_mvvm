@@ -10,9 +10,10 @@ import SwiftUI
 struct HomeView: View {
     @State var weather: WeatherResponse?
     @State var weatherManager: WeatherManager
+    @State var locationManager: LocationManager
     var body: some View {
         TabView {
-            WeatherView(weatherManager: weatherManager, weather: weather)
+            WeatherView(weatherManager: weatherManager, locationManager: locationManager, weather: weather)
                 .tabItem {
                     Label("Weather", systemImage: "smoke")
                         .foregroundColor(.white)

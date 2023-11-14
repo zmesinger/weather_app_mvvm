@@ -11,4 +11,9 @@ struct SysResponse: Decodable {
     var country: String
     var sunrise: Int
     var sunset: Int
+//    var dt_txt: String
+//    
+//    var dtText: String {
+//        return dt_txt
+//    }
 }

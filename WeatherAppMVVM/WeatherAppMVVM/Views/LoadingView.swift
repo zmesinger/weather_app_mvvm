@@ -17,7 +17,7 @@ struct LoadingView: View {
                 LoadingComponent()
                 VStack {
                     
-                    Text("Fetching location...")
+                    Text("Fetching...")
                         .foregroundColor(.white)
                         .font(.title2)
                 

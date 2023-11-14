@@ -63,7 +63,7 @@ struct StartView: View {
                     } label: {
                         HStack {
                             Text("Skip")
-                            Image(systemName: "arrow.forward")
+                            Image(systemName: "chevron.forward")
                         }
                         .padding(.all, 8)
                         .background(darkBlue)

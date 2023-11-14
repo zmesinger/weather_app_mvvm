@@ -20,7 +20,7 @@ struct MainView: View {
             
             if let location = locationManager.locationCoordinates {
                 if let weather = weather {
-                    HomeView(weather: weather, weatherManager: weatherManager)
+                    HomeView(weather: weather, weatherManager: weatherManager, locationManager: locationManager)
                 } else {
                     LoadingView()
                         .transition(.slide)
@@ -40,7 +40,7 @@ struct MainView: View {
                     LoadingView()
                 } else {
                     if skipFetchingLocation {
-                        HomeView(weather: weather, weatherManager: weatherManager)
+                        HomeView(weather: weather, weatherManager: weatherManager, locationManager: locationManager)
                     } else {
                         StartView(locationManager: locationManager, skipFetchingLocation: $skipFetchingLocation)
                             
