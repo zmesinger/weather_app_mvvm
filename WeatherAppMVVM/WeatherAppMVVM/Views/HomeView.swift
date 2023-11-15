@@ -8,13 +8,20 @@
 import SwiftUI
 
 struct HomeView: View {
+    @State var weather: WeatherResponse?
+    @State var weatherManager: WeatherManager
+    @State var locationManager: LocationManager
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TabView {
+            WeatherView(weatherManager: weatherManager, locationManager: locationManager, weather: weather)
+                .tabItem {
+                    Label("Weather", systemImage: "smoke")
+                        .foregroundColor(.white)
+                }
+                
+        }
+        .toolbarColorScheme(.light, for: .tabBar)
     }
 }
 
-struct HomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeView()
-    }
-}
+

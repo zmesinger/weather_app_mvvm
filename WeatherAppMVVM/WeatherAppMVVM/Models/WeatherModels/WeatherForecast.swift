@@ -1,20 +1,18 @@
 //
-//  WeatherResponse.swift
+//  WeatherForecast.swift
 //  WeatherAppMVVM
 //
-//  Created by MacBookProAtos on 06.11.2023..
+//  Created by MacBookProAtos on 10.11.2023..
 //
 
 import Foundation
 
-struct WeatherResponse: Decodable {
-    
-    var weather: [WeatherDetails]
+struct WeatherForecast: Decodable {
+    var dt: Int
     var main: MainResponse
-    var name: String
-    var wind: WindResponse
-    var sys: SysResponse
+    var weather: [WeatherDetails]
     
+
     var weatherCondition: String {
         guard let firstWeather = weather.first else { return "cloud" }
         
@@ -38,4 +36,7 @@ struct WeatherResponse: Decodable {
         }
         
     }
+    
+    
+ 
 }
