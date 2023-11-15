@@ -10,7 +10,7 @@ import SwiftUI
 struct WeatherDetailsView: View {
     @State var forecast: ForecastResponse
     let dateFormatter = DateFormatter()
-    
+    let columns = [GridItem(.fixed(4))]
     func getFormattedDate(_ dateInInt: Int) -> String {
         dateFormatter.dateFormat = "dd/MM/yyyy"
         return dateFormatter.string(from: Date(timeIntervalSince1970: TimeInterval(dateInInt)))
@@ -33,6 +33,15 @@ struct WeatherDetailsView: View {
         
     }
     
+    func getTimeComponent(_ dateInEpoch: Int) -> String {
+        let date = Date(timeIntervalSince1970: TimeInterval(dateInEpoch))
+        let calendar = Calendar.current
+        let hour = calendar.component(.hour, from: date)
+        let minutes = calendar.component(.minute, from: date)
+        
+        return "\(hour):\(minutes)"
+    }
+    
     var body: some View {
         
         
@@ -49,7 +58,7 @@ struct WeatherDetailsView: View {
                 
                 if getFormattedDate(forecast.dt) == Date.getCurrentDate() {
                     HStack (alignment: .center ,spacing: 60) {
-                        Text(Date(timeIntervalSince1970: TimeInterval(forecast.dt )), style: .date)
+                        Text(Date(timeIntervalSince1970: TimeInterval(forecast.dt )), style: .time)
                             .foregroundColor(.white)
                             .padding()
                         
@@ -75,6 +84,38 @@ struct WeatherDetailsView: View {
                 .overlay(.white)
                 .padding(.horizontal, 12)
                 .cornerRadius(10)
+            
+            
+            Text("City details")
+                .foregroundColor(.white)
+                .font(.title3)
+                .padding(.bottom, 16)
+            
+            Grid(alignment: .leading, horizontalSpacing: 48, verticalSpacing: 24) {
+
+                GridRow {
+                    WeatherDetailsItem(symbolName: "person.3.sequence", value: String(forecast.city.population), itemName: "Population")
+                        .padding(.horizontal)
+                    WeatherDetailsItem(symbolName: "building.columns", value: "\(forecast.city.name), \(forecast.city.country)", itemName: "Location")
+                        .padding(.horizontal)
+                }
+
+
+                GridRow {
+                    WeatherDetailsItem(symbolName: "sun.horizon", value: getTimeComponent(forecast.city.sunrise), itemName: "Sunrise")
+                        .padding(.horizontal)
+
+                    WeatherDetailsItem(symbolName: "moon.haze", value: getTimeComponent(forecast.city.sunset), itemName: "Sunset")
+                        .padding(.horizontal)
+
+                }
+
+
+            }
+            
+   
+            
+            
             
                 
             
